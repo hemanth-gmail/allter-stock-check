@@ -22,17 +22,19 @@ A Python script that monitors product stock on letsallter.com and sends WhatsApp
 
 Click the "Fork" button at the top right of this page to create your own copy of the repository.
 
-### 2. Set Up Environment Variables
-
-You'll need to set up the following secrets in your GitHub repository:
+### 2. Set Up Configuration
 
 1. Go to your repository's **Settings** > **Environments**
 2. Click **New environment** and name it `Environment`
-3. In the environment settings, click **Add secret** and add the following:
+3. In the environment settings, add the following:
+
+   **Environment variables**:
+   - `INTERESTED_ITEMS`: Semicolon-separated list of product names to monitor (e.g., `Product 1;Product 2;Product 3`)
+
+   **Environment secrets**:
    - `TWILIO_ACCOUNT_SID`: Your Twilio Account SID
    - `TWILIO_AUTH_TOKEN`: Your Twilio Auth Token
    - `YOUR_WHATSAPP_NUMBER`: Your WhatsApp number in the format `whatsapp:+1234567890`
-   - `INTERESTED_ITEMS`: Semicolon-separated list of product names to monitor (e.g., `Product 1;Product 2;Product 3`)
 
 ### 3. Configure Check Frequency (Optional)
 
