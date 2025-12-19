@@ -13,7 +13,18 @@ class LetsAllterScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         self.data_dir = 'scraped_data'
-        self.interested_items = {'Organic Bamboo Diapers- Large Size (8-12 kgs)', 'Organic Bamboo Diapers- Medium Size (5-8 kgs)'}
+        # Load interested items from environment variable
+        interested_items_str = os.getenv('INTERESTED_ITEMS', '')
+        self.interested_items = set(item.strip() for item in interested_items_str.split(';') if item.strip())
+        
+        # If no items provided in env var, use default items
+        if not self.interested_items:
+            self.interested_items = {
+                'Organic Bamboo Diapers- Large Size (8-12 kgs)',
+                'Organic Bamboo Diapers- Medium Size (5-8 kgs)'
+            }
+            print("Using default interested items as none were provided in INTERESTED_ITEMS")
+            
         self.create_data_directory()
         
         # Load credentials from environment variables
