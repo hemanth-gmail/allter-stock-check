@@ -10,6 +10,7 @@ on:
 jobs:
   check-stock:
     runs-on: ubuntu-latest
+    environment: Environment
     
     steps:
     - uses: actions/checkout@v3

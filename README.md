@@ -26,8 +26,9 @@ Click the "Fork" button at the top right of this page to create your own copy of
 
 You'll need to set up the following secrets in your GitHub repository:
 
-1. Go to your repository's **Settings** > **Secrets and variables** > **Actions**
-2. Click **New repository secret** and add the following:
+1. Go to your repository's **Settings** > **Environments**
+2. Click **New environment** and name it `Environment`
+3. In the environment settings, click **Add secret** and add the following:
    - `TWILIO_ACCOUNT_SID`: Your Twilio Account SID
    - `TWILIO_AUTH_TOKEN`: Your Twilio Auth Token
    - `YOUR_WHATSAPP_NUMBER`: Your WhatsApp number in the format `whatsapp:+1234567890`
