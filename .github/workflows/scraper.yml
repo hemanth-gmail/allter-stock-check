@@ -1,9 +1,9 @@
-name: Product Stock Checker
+name: Allter Product Stock Checker
 
 on:
   schedule:
-    # Run every 6 hours (at minute 0 of every 6th hour)
-    - cron: '0 */6 * * *'
+    # Run every 1 hours (at minute 0 of every 1st hour)
+    - cron: '0 */1 * * *'
   # Allow manual triggers
   workflow_dispatch:
 
