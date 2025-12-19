@@ -173,11 +173,6 @@ class LetsAllterScraper:
             return
             
         print(f"Found {len(interested_products)} interested products.")
-        
-        # Save to CSV for record
-        saved_file = self.save_to_csv(interested_products)
-        if saved_file:
-            print(f"Data saved to {saved_file}")
             
         # Check stock and send notifications
         for product in interested_products:
